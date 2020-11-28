@@ -3,7 +3,7 @@
  *
  * @author Johan Leitet <johan.leitet@lnu.se>
  * @author Mats Loock <mats.loock@lnu.se>
- * @author // TODO: YOUR NAME <YOUR EMAIL>
+ * @author "Daniel Persson <dp222jd@lnu.se>"
  * @version 1.0.0
  */
 
