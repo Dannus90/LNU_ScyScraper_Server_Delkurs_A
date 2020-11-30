@@ -14,16 +14,33 @@ import { LinkScraper } from './link-scraper.js'
 /**
  * Encapsulates a Node application.
  */
-export class Application {
-  constructor(datasource = '', urls = []) {
-    this._datasource = datasource
+export class Application {  
+  /**
+   *Creates an instance of Application.
+   * @param {*} datasource
+   * @param {*} urls
+   * @memberof Application
+   */
+  constructor(dataSource, urls) {
+    this._dataSource = dataSource
     this._urls = urls
   }
 
+  /**
+   * Gets the urls.
+   *
+   * @memberof Application
+   * @returns {string[]} The URLs.
+   */
   get urls () {
     return [...this._urls]
   }
 
+  /**
+   * Sets the urls that we are going to scrape links from.
+   *
+   * @memberof Application
+   */
   set urls (values) {
     if(!values) {
       throw new Error('No url(s) were provided')
@@ -50,14 +67,14 @@ export class Application {
 
     const linksSet = new Set([...links.flat()])
 
-    await this._writePersinstentLinks([...linksSet].sort())
+    await this._writePersistentLinks([...linksSet].sort())
   }
 
   async _readPersistentLinks () {
-    return fs.readJson(this.dataSource).catch(error => [])
+    return fs.readJson(this._dataSource).catch(error => [])
   }
 
-  async _writePersinstentLinks (links) {
-    fs.writeJson(this._dataSource, links, { spaces: 4 })
+  async _writePersistentLinks (links) {
+      fs.writeJson(this._dataSource, links, { spaces: 4 })
   }
 }
