@@ -7,6 +7,11 @@
  * @version 1.0.0
  */
 
+import fs from 'fs-extra'
+import jsdom from 'jsdom'
+import fetch from 'node-fetch'
+import validator from 'validator'
+
 /**
  * Encapsulates a Node application.
  */

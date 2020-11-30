@@ -19,7 +19,7 @@ const main = async () => {
 
     // Get the absolute path to the data source.
     const dataSource = resolve(process.cwd(), path)
-
+    
     // Begin to run the actual application.
     const application = new Application(dataSource, urls)
     await application.run()
