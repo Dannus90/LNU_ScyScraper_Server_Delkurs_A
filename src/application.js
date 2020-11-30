@@ -16,7 +16,10 @@ import validator from 'validator'
  * Encapsulates a Node application.
  */
 export class Application {
-  // TODO: Complete the class (and add additional classes in separate files).
+  constructor(datasource = '', urls = []) {
+    this._datasource = datasource
+    this._urls = urls
+  }
   /**
    * Begins running the application.
    */
